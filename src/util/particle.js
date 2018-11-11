@@ -29,7 +29,11 @@ Point.prototype.drawLine = function(ctx, p) {
   const dx = Math.abs(this.x - p.x);
   const dy = Math.abs(this.y - p.y);
   const d = Math.sqrt(dx * dx, dy * dy);
-  if (dx < 150 && dy < 150) {
+  let distance = 150;
+  if (this.w < 1024) {
+    distance = 100;
+  }
+  if (dx < distance && dy < distance) {
     const alpha = (100 - d) / 100 * 1;
     ctx.beginPath();
     ctx.moveTo(this.x, this.y);
@@ -58,7 +62,11 @@ class BackCanvas {
     canvas.width = w;
     canvas.height = h;
     this.points = [];
-    for (let i = 0; i <= 150; i++) {
+    let num = 150;
+    if (this.w < 1024) {
+      num = 80;
+    }
+    for (let i = 0; i <= num; i++) {
       this.points.push(new Point(Math.random() * w, Math.random() * h, w, h));
     }
   }
