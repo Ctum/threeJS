@@ -22,7 +22,6 @@ export default {
     HelloWorld
   },
   mounted() {
-    const canvas = document.getElementById('backCanvas');
     const w = document.getElementById('home').offsetWidth;
     const h = document.getElementById('home').offsetHeight;
     const myCanvas = new BackCanvas('backCanvas', w, h);
@@ -56,6 +55,7 @@ export default {
             margin-left: 12px;
           }
           margin-left: 24px;
+          text-decoration: none;
         }
         a:first-child {
           margin-left: 0;
