@@ -7,3 +7,5 @@ yarn add gh-pages --dev
 deploy: vue-cli-service build && gh-pages -d dist
 yarn deploy
 ```
+### preview
+[background-canvas](https://ctum.github.io/threeJS)
