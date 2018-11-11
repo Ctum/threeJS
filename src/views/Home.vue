@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <canvas id="backCanvas" style="width:1500px; height:1000px;"></canvas>
+  <div id="home">
+    <canvas id="backCanvas"></canvas>
   </div>
 </template>
 
@@ -16,10 +16,20 @@ export default {
   },
   mounted() {
     const canvas = document.getElementById('backCanvas');
-    const w = canvas.offsetWidth;
-    const h = canvas.offsetHeight;
+    const w = document.getElementById('home').offsetWidth;
+    const h = document.getElementById('home').offsetHeight;
+    console.log(w, h, 'jj');
     const myCanvas = new BackCanvas('backCanvas', w, h);
     myCanvas.loop();
   }
 }
 </script>
+
+<style lang="less">
+#home {
+  height: 100%;
+}
+canvas {
+  display: block;
+}
+</style>

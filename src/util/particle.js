@@ -26,10 +26,10 @@ Point.prototype.move = function() {
 }
 
 Point.prototype.drawLine = function(ctx, p) {
-  const dx = this.x - p.x;
-  const dy = this.y - p.y;
+  const dx = Math.abs(this.x - p.x);
+  const dy = Math.abs(this.y - p.y);
   const d = Math.sqrt(dx * dx, dy * dy);
-  if (d < 100) {
+  if (dx < 150 && dy < 150) {
     const alpha = (100 - d) / 100 * 1;
     ctx.beginPath();
     ctx.moveTo(this.x, this.y);
@@ -56,9 +56,9 @@ class BackCanvas {
     this.w = w;
     this.h = h;
     canvas.width = w;
-    canvas.h = h;
+    canvas.height = h;
     this.points = [];
-    for (let i = 0; i <= 400; i++) {
+    for (let i = 0; i <= 150; i++) {
       this.points.push(new Point(Math.random() * w, Math.random() * h, w, h));
     }
   }
@@ -75,8 +75,13 @@ class BackCanvas {
   }
 
   loop() {
-    requestAnimationFrame(this.loop);
-    this.paint();
+    const _this = this;
+    // window.requestAnimationFrame(function() {
+    //   _this.paint();
+    // });
+    setInterval(function() {
+      _this.paint();
+    }, 1000 / 60)
   }
 }
 
