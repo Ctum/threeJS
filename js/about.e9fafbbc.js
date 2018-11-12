@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{"1ba2":function(e,t,n){"use strict";n.r(t);var s=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},u=[function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"about"},[n("h1",[e._v("Resume")])])}],a=n("2877"),l={},c=Object(a["a"])(l,s,u,!1,null,null,null);c.options.__file="Resume.vue";t["default"]=c.exports}}]);
+//# sourceMappingURL=about.e9fafbbc.js.map
